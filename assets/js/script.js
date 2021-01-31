@@ -49,6 +49,14 @@ function populatePage (cn){
         return time;
     }
 
+    $("#current-city").text(cityNameObj + " " + makeDate(c.current.dt));
+    var icon = c.current.weather[0].icon;
+    $("#now-icon").attr("src","http://openweathermap.org/img/wn/" + icon + "@2x.png");    
+    $("#now-temp").text("Temp: " + (c.current.temp.toFixed(1) + " F"));
+    $("#now-humidity").text("Humidity: " + c.current.humidity + "%");
+    $("#now-wind").text("Wind Speed: " + c.current.wind_speed + " MPH");    
+    $("#now-uv").text("UV Index: " + c.current.uvi);
+
 });
 });
 }
