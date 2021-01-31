@@ -6,6 +6,8 @@ A responsive weather-app for travelers to see the weather outlook for multiple c
 
 [Weather Application](https://raquellee.github.io/weather_dashboard/)
 
-## Screenshot
+## Screenshots
 
-![Weather Screenshot](https://raw.githubusercontent.com/RaquelLee/weather_dashboard/main/assets/images/wthrscrn.png)
+![Weather Screenshot](https://raw.githubusercontent.com/RaquelLee/weather_dashboard/main/assets/images/lowuv.png)
+![Weather Screenshot](https://raw.githubusercontent.com/RaquelLee/weather_dashboard/main/assets/images/meduv.png)
+![Weather Screenshot](https://raw.githubusercontent.com/RaquelLee/weather_dashboard/main/assets/images/highuv.png)
