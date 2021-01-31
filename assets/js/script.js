@@ -4,7 +4,6 @@ populatePage(cityName);
 function removeUv(){
     $("#now-uv").removeClass("btn-success btn-warning btn-danger");
 }
-
 $("#city-search").on("click", function(event) {
     removeUv();
     event.preventDefault();
@@ -12,7 +11,7 @@ $("#city-search").on("click", function(event) {
     localStorage.setItem("City", cityName);
     populatePage(cityName);
     var li = $("<li>");
-    li.addClass("list-group-item list-group-item-action");
+    li.addClass("list-group-item list-group-item-action list-group-item-info");
     li.text(cityName);
     $(li).on("click", function() {
         populatePage(cityName);
@@ -48,10 +47,10 @@ function populatePage (cn){
 
         if (c.current.uvi < 3){
             $("#now-uv").addClass("btn btn-success");
-        } 
+        };
         if (c.current.uvi > 3) {
             $("#now-uv").addClass("btn btn-warning");
-        } 
+        };
         if (c.current.uvi >= 8){
             $("#now-uv").addClass("btn btn-danger");
         };
@@ -66,7 +65,7 @@ function populatePage (cn){
         return time;
     };
 
-    $("#current-city").text(cityNameObj + " " + makeDate(c.current.dt));
+    $("#current-city").text("Current Weather for " + cityNameObj + " " + makeDate(c.current.dt));
     var icon = c.current.weather[0].icon;
     $("#now-icon").attr("src","https://openweathermap.org/img/wn/" + icon + "@2x.png");    
     $("#now-temp").text("Temp: " + (c.current.temp.toFixed(1) + " F"));
@@ -103,6 +102,9 @@ function populatePage (cn){
     $("#icon5").attr("src","https://openweathermap.org/img/wn/" + icon5 + "@2x.png");
     $("#temp5").text("Temp: " + c.daily[5].temp.day.toFixed(1) + " F");
     $("#humidity5").text("Humidity: " + c.daily[5].humidity + "%");
+
+   $("#city-input").val("");
+
 
 });
 });
