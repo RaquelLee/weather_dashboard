@@ -103,8 +103,7 @@ function populatePage (cn){
     $("#temp5").text("Temp: " + c.daily[5].temp.day.toFixed(1) + " F");
     $("#humidity5").text("Humidity: " + c.daily[5].humidity + "%");
 
-   $("#city-input").val("");
-
+    $("#city-input").val("");
 
 });
 });
