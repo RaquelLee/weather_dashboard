@@ -65,6 +65,36 @@ function populatePage (cn){
         $("#now-uv").addClass("bg-danger");
     };
 
+    $("#date1").text(makeDate(c.daily[0].dt));
+    var icon1 = c.daily[0].weather[0].icon;
+    $("#icon1").attr("src","http://openweathermap.org/img/wn/" + icon1 + "@2x.png");
+    $("#temp1").text("Temp: " + c.daily[0].temp.day.toFixed(1) + " F");
+    $("#humidity1").text("Humidity: " + c.daily[0].humidity + "%");
+    
+    $("#date2").text(makeDate(c.daily[1].dt));
+    var icon2 = c.daily[1].weather[0].icon;
+    $("#icon2").attr("src","http://openweathermap.org/img/wn/" + icon2 + "@2x.png");
+    $("#temp2").text("Temp: " + c.daily[1].temp.day.toFixed(1) + " F");
+    $("#humidity2").text("Humidity: " + c.daily[1].humidity + "%");
+    
+    $("#date3").text(makeDate(c.daily[2].dt));
+    var icon3 = c.daily[2].weather[0].icon;
+    $("#icon3").attr("src","http://openweathermap.org/img/wn/" + icon3 + "@2x.png");
+    $("#temp3").text("Temp: " + c.daily[2].temp.day.toFixed(1) + " F");
+    $("#humidity3").text("Humidity: " + c.daily[2].humidity + "%");
+    
+    $("#date4").text(makeDate(c.daily[3].dt));
+    var icon4 = c.daily[3].weather[0].icon;
+    $("#icon4").attr("src","http://openweathermap.org/img/wn/" + icon4 + "@2x.png");
+    $("#temp4").text("Temp: " + c.daily[3].temp.day.toFixed(1) + " F");
+    $("#humidity4").text("Humidity: " + c.daily[3].humidity + "%");
+    
+    $("#date5").text(makeDate(c.daily[4].dt));
+    var icon5 = c.daily[4].weather[0].icon;
+    $("#icon5").attr("src","http://openweathermap.org/img/wn/" + icon5 + "@2x.png");
+    $("#temp5").text("Temp: " + c.daily[4].temp.day.toFixed(1) + " F");
+    $("#humidity5").text("Humidity: " + c.daily[4].humidity + "%");
+
 });
 });
 }
