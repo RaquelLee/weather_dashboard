@@ -18,7 +18,7 @@ $("#city-search").on("click", function(event) {
 function populatePage (cn){
     var apiKey = "&appid=166935e80f8de25e6d29e85714fb2820";
     var queryURL =
-    "http://api.openweathermap.org/geo/1.0/direct?q="
+    "https://api.openweathermap.org/geo/1.0/direct?q="
     + cn + apiKey;
     
     $.ajax({
