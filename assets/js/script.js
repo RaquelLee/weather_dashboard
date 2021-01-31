@@ -1,7 +1,12 @@
 cityName = localStorage.getItem("City");
 populatePage(cityName);
 
+function removeUv(){
+    $("#now-uv").removeClass("btn-success btn-warning btn-danger");
+}
+
 $("#city-search").on("click", function(event) {
+    removeUv();
     event.preventDefault();
     var cityName = $("#city-input").val();
     localStorage.setItem("City", cityName);
@@ -38,19 +43,18 @@ function populatePage (cn){
         url: queryURL,
         method: "GET"
     }).then(function(c) {
-        function determineUv () {
-            if (c.current.uvi < 3){
-                $("#now-uv").addClass("btn btn-success");
-            } 
-            if (c.current.uvi > 3) {
-                $("#now-uv").addClass("btn btn-warning");
-            } 
-            if (c.current.uvi >= 8){
-                $("#now-uv").addClass("btn btn-danger");
-            };
-        };
 
-        determineUv();
+        removeUv();
+
+        if (c.current.uvi < 3){
+            $("#now-uv").addClass("btn btn-success");
+        } 
+        if (c.current.uvi > 3) {
+            $("#now-uv").addClass("btn btn-warning");
+        } 
+        if (c.current.uvi >= 8){
+            $("#now-uv").addClass("btn btn-danger");
+        };
 
         function makeDate(dt){
         var a = new Date(dt * 1000);
