@@ -28,5 +28,17 @@ function populatePage (cn){
     var cityNameObj = c[0].name;
     var lat = c[0].lat;
     var lon = c[0].lon;
-    });
-};
+
+    queryURL= 
+    "https://api.openweathermap.org/data/2.5/onecall?lat="
+    + lat + "&lon=" + lon +
+    "&units=imperial&exclude=minutely,hourly,alerts" + apiKey;
+    
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(c) {
+
+});
+});
+}
