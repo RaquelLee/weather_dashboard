@@ -57,6 +57,14 @@ function populatePage (cn){
     $("#now-wind").text("Wind Speed: " + c.current.wind_speed + " MPH");    
     $("#now-uv").text("UV Index: " + c.current.uvi);
 
+    if (c.current.uvi < 3){
+        $("#now-uv").addClass("btn btn-success");
+    } else if (c.current.uvi > 3) {
+        $("#now-uv").addClass("bg-warning");
+    } else if (c.current.uvi >= 8){
+        $("#now-uv").addClass("bg-danger");
+    };
+
 });
 });
 }
