@@ -38,8 +38,21 @@ function populatePage (cn){
         url: queryURL,
         method: "GET"
     }).then(function(c) {
+        function determineUv () {
+            if (c.current.uvi < 3){
+                $("#now-uv").addClass("btn btn-success");
+            } 
+            if (c.current.uvi > 3) {
+                $("#now-uv").addClass("btn btn-warning");
+            } 
+            if (c.current.uvi >= 8){
+                $("#now-uv").addClass("btn btn-danger");
+            };
+        };
 
-    function makeDate(dt){
+        determineUv();
+
+        function makeDate(dt){
         var a = new Date(dt * 1000);
         var months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
         var month = months[a.getMonth()];
@@ -47,7 +60,7 @@ function populatePage (cn){
         var year = a.getFullYear();
         var time = month + "/" + date + "/" + year;
         return time;
-    }
+    };
 
     $("#current-city").text(cityNameObj + " " + makeDate(c.current.dt));
     var icon = c.current.weather[0].icon;
@@ -57,43 +70,35 @@ function populatePage (cn){
     $("#now-wind").text("Wind Speed: " + c.current.wind_speed + " MPH");    
     $("#now-uv").text("UV Index: " + c.current.uvi);
 
-    if (c.current.uvi < 3){
-        $("#now-uv").addClass("btn btn-success");
-    } else if (c.current.uvi > 3) {
-        $("#now-uv").addClass("bg-warning");
-    } else if (c.current.uvi >= 8){
-        $("#now-uv").addClass("bg-danger");
-    };
-
-    $("#date1").text(makeDate(c.daily[0].dt));
-    var icon1 = c.daily[0].weather[0].icon;
+    $("#date1").text(makeDate(c.daily[1].dt));
+    var icon1 = c.daily[1].weather[0].icon;
     $("#icon1").attr("src","https://openweathermap.org/img/wn/" + icon1 + "@2x.png");
-    $("#temp1").text("Temp: " + c.daily[0].temp.day.toFixed(1) + " F");
-    $("#humidity1").text("Humidity: " + c.daily[0].humidity + "%");
+    $("#temp1").text("Temp: " + c.daily[1].temp.day.toFixed(1) + " F");
+    $("#humidity1").text("Humidity: " + c.daily[1].humidity + "%");
     
-    $("#date2").text(makeDate(c.daily[1].dt));
-    var icon2 = c.daily[1].weather[0].icon;
+    $("#date2").text(makeDate(c.daily[2].dt));
+    var icon2 = c.daily[2].weather[0].icon;
     $("#icon2").attr("src","https://openweathermap.org/img/wn/" + icon2 + "@2x.png");
-    $("#temp2").text("Temp: " + c.daily[1].temp.day.toFixed(1) + " F");
-    $("#humidity2").text("Humidity: " + c.daily[1].humidity + "%");
+    $("#temp2").text("Temp: " + c.daily[2].temp.day.toFixed(1) + " F");
+    $("#humidity2").text("Humidity: " + c.daily[2].humidity + "%");
     
-    $("#date3").text(makeDate(c.daily[2].dt));
-    var icon3 = c.daily[2].weather[0].icon;
+    $("#date3").text(makeDate(c.daily[3].dt));
+    var icon3 = c.daily[3].weather[0].icon;
     $("#icon3").attr("src","https://openweathermap.org/img/wn/" + icon3 + "@2x.png");
-    $("#temp3").text("Temp: " + c.daily[2].temp.day.toFixed(1) + " F");
-    $("#humidity3").text("Humidity: " + c.daily[2].humidity + "%");
+    $("#temp3").text("Temp: " + c.daily[3].temp.day.toFixed(1) + " F");
+    $("#humidity3").text("Humidity: " + c.daily[3].humidity + "%");
     
-    $("#date4").text(makeDate(c.daily[3].dt));
-    var icon4 = c.daily[3].weather[0].icon;
+    $("#date4").text(makeDate(c.daily[4].dt));
+    var icon4 = c.daily[4].weather[0].icon;
     $("#icon4").attr("src","https://openweathermap.org/img/wn/" + icon4 + "@2x.png");
-    $("#temp4").text("Temp: " + c.daily[3].temp.day.toFixed(1) + " F");
-    $("#humidity4").text("Humidity: " + c.daily[3].humidity + "%");
+    $("#temp4").text("Temp: " + c.daily[4].temp.day.toFixed(1) + " F");
+    $("#humidity4").text("Humidity: " + c.daily[4].humidity + "%");
     
-    $("#date5").text(makeDate(c.daily[4].dt));
-    var icon5 = c.daily[4].weather[0].icon;
+    $("#date5").text(makeDate(c.daily[5].dt));
+    var icon5 = c.daily[5].weather[0].icon;
     $("#icon5").attr("src","https://openweathermap.org/img/wn/" + icon5 + "@2x.png");
-    $("#temp5").text("Temp: " + c.daily[4].temp.day.toFixed(1) + " F");
-    $("#humidity5").text("Humidity: " + c.daily[4].humidity + "%");
+    $("#temp5").text("Temp: " + c.daily[5].temp.day.toFixed(1) + " F");
+    $("#humidity5").text("Humidity: " + c.daily[5].humidity + "%");
 
 });
 });
