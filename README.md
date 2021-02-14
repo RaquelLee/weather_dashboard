@@ -17,4 +17,4 @@ A responsive weather-app for travelers to see the weather outlook for multiple c
 ![Weather Screenshot](https://raw.githubusercontent.com/RaquelLee/weather_dashboard/main/assets/images/highuv.png)
 
 ## License
-https://img.shields.io/github/license/raquellee/weather_dashboard
+[license](https://img.shields.io/github/license/raquellee/weather_dashboard)
