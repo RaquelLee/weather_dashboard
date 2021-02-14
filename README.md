@@ -5,6 +5,7 @@ A responsive weather-app for travelers to see the weather outlook for multiple c
 ## Technologies Used
 * OpenWeather Geocoding API
 * OpenWeather One Call API 
+* jQuery
 
 ## Deployed Application
 
